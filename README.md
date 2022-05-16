@@ -24,3 +24,9 @@ A aplicação irá requisitar os dados na api [random user](https://randomuser.m
 * Usar o react-router para redirecionar o usuário
 * Renderizar a localização usando o Google Maps
 * Ao menos 3 testes de integração utilizando o Cypress
+
+## Como Enviar?
+
+* Clone esse repositório
+* Crie uma branch com o seu nome
+* Após finalizado o desafio abra um PR (pull request) no reposiório
