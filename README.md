@@ -1,6 +1,6 @@
 # Desafio React
 
-O objetico desse desafio é verificar os seus conhecimentos de react, você criará uma aplicação react que busca e lista pessoas em uma API e permite que o usuários refine sua busca através de filtros
+O objetico desse desafio é verificar os seus conhecimentos de react, você criará uma aplicação react que busca e lista pessoas em uma API e permite que o usuários refinem sua busca através de filtros
 
 ## Design
 
