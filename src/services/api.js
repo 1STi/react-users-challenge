@@ -1,9 +1,7 @@
-// https://randomuser.me/api/
-
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://randomuser.me/api/',
+  baseURL: import.meta.env.VITE_API_URL,
+  dataType: 'json',
 });
-
 export default api;
