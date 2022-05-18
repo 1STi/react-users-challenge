@@ -1,5 +1,32 @@
-iniciando o projeto
+## Desafio React
 
-api envia apenas 1 user por requisição
+O objetico desse desafio é verificar os seus conhecimentos de react, você criará uma aplicação react que busca e lista pessoas em uma API e permite que o usuários refinem sua busca através de filtros
 
-como gerar 20 users? map?
+### Design da interface:
+https://framer.com/projects/9A3d2HBXovIdAzJIoI8e-8DCAG
+
+### Requisitos UX
+
+[] Listar ao menos 12 pessoas na tela
+
+[] Habilitar a visualização em lista
+
+[] Aplicar os filtros de nome, genero, idade, nacionalidade
+
+[] Redirecionar o usuário para a página de detalhes ao clicar no avatar de uma pessoa
+
+[] Exibir um mapa com as coordenadas do usuário selecionado
+
+[] Exibir a cidade é o país do usuário selecionado
+
+
+### Requisitos Técnicos
+
+[] Usar styled-components para estilizar a aplicação
+
+[] Usar o react-router para redirecionar o usuári
+
+[] Renderizar a localização usando o Google Maps
+
+[] Ao menos 3 testes de integração utilizando o Cypress
+
