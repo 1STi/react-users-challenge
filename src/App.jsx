@@ -24,44 +24,61 @@ function App() {
         }}
       />
 
-      {users
-        .filter((user) => {
-          if (search == '') {
-            return user;
-          } else if (
-            user.name.first
-              .toLowerCase()
-              .includes(search.toLowerCase())
-          ) {
-            return user;
-          }
-        })
-        .map((user, login) => {
-          return (
-            <table>
-              <tbody>
-                <tr>
-                  <th>Photo</th>
-                  <th>Name</th>
-                  <th>Surname</th>
-                  <th>Age</th>
-                  <th>Contry</th>
-                  <th>Gender</th>
-                </tr>
+      <button onClick={() => {}}>Search</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Contry</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users
+            .filter((user) => {
+              console.log(user);
+              if (search == '') {
+                return user;
+              } else if (
+                user.name.first
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                user.name.last
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                String(user.dob.age)
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                user.location.country
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                user.gender
+                  .toLowerCase()
+                  .includes(search.toLowerCase())
+              ) {
+                return user;
+              }
+            })
+            .map((user, login) => {
+              return (
                 <tr className="users" key={login.uuid}>
                   <td>
                     <img src={user.picture.thumbnail} />
                   </td>
-                  <td>{user.name.first}</td>
-                  <td>{user.name.last}</td>
+                  <td>
+                    {user.name.first} {user.name.last}
+                  </td>
                   <td>{user.dob.age}</td>
                   <td>{user.location.country}</td>
                   <td>{user.gender}</td>
                 </tr>
-              </tbody>
-            </table>
-          );
-        })}
+              );
+            })}
+        </tbody>
+      </table>
     </>
   );
 }
