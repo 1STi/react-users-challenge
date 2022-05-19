@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     api.get('/').then((res) => {
@@ -14,22 +15,35 @@ function App() {
 
   return (
     <>
-      {console.log(users)}
       <h1>h1PaginaDeTesteee</h1>
-      <div className="users">
-        {users.map((user, login) => {
+
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={(event) => {
+          setSearch(event.target.value);
+        }}
+      />
+
+      {users
+        .filter((user) => {
+          if (search == '') {
+            return user;
+          } else if (
+            user.name.first
+              .toLowerCase()
+              .includes(search.toLowerCase())
+          ) {
+            return user;
+          }
+        })
+        .map((user, login) => {
           return (
-            <div key={login.uuid}>
-              <img src={user.picture.thumbnail} /> &nbsp;
-              {user.name.first} &nbsp;
-              {user.name.last} &nbsp;
-              {user.dob.age} &nbsp;
-              {user.location.country} &nbsp;
-              {user.gender}
+            <div className="users" key={login.uuid}>
+              <p>{user.name.first}</p>
             </div>
           );
         })}
-      </div>
     </>
   );
 }
