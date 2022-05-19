@@ -39,14 +39,16 @@ function App() {
         })
         .map((user, login) => {
           return (
-            <div className="users" key={login.uuid}>
-              <img src={user.picture.thumbnail} /> &nbsp;
-              {user.name.first} &nbsp;
-              {user.name.last} &nbsp;
-              {user.dob.age} &nbsp;
-              {user.location.country} &nbsp;
-              {user.gender}
-            </div>
+            <ul className="users" key={login.uuid}>
+              <li>
+                <img src={user.picture.thumbnail} /> &nbsp;
+                {user.name.first} &nbsp;
+                {user.name.last} &nbsp;
+                {user.dob.age} &nbsp;
+                {user.location.country} &nbsp;
+                {user.gender}
+              </li>
+            </ul>
           );
         })}
     </>
