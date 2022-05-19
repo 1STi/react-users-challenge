@@ -40,7 +40,12 @@ function App() {
         .map((user, login) => {
           return (
             <div className="users" key={login.uuid}>
-              <p>{user.name.first}</p>
+              <img src={user.picture.thumbnail} /> &nbsp;
+              {user.name.first} &nbsp;
+              {user.name.last} &nbsp;
+              {user.dob.age} &nbsp;
+              {user.location.country} &nbsp;
+              {user.gender}
             </div>
           );
         })}
