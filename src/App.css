@@ -10,6 +10,10 @@
 .search {
   padding: 10px;
   font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80vh;
+  margin-top: 20px;
 }
 
 .list {

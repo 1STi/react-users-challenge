@@ -15,8 +15,6 @@ function App() {
 
   return (
     <>
-      <h1>h1PaginaDeTesteee</h1>
-
       <input
         className="search"
         type="text"
