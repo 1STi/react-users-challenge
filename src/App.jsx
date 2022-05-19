@@ -18,6 +18,7 @@ function App() {
       <h1>h1PaginaDeTesteee</h1>
 
       <input
+        className="search"
         type="text"
         placeholder="Search..."
         onChange={(event) => {
@@ -39,16 +40,28 @@ function App() {
         })
         .map((user, login) => {
           return (
-            <ul className="users" key={login.uuid}>
-              <li>
-                <img src={user.picture.thumbnail} /> &nbsp;
-                {user.name.first} &nbsp;
-                {user.name.last} &nbsp;
-                {user.dob.age} &nbsp;
-                {user.location.country} &nbsp;
-                {user.gender}
-              </li>
-            </ul>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Photo</th>
+                  <th>Name</th>
+                  <th>Surname</th>
+                  <th>Age</th>
+                  <th>Contry</th>
+                  <th>Gender</th>
+                </tr>
+                <tr className="users" key={login.uuid}>
+                  <td>
+                    <img src={user.picture.thumbnail} />
+                  </td>
+                  <td>{user.name.first}</td>
+                  <td>{user.name.last}</td>
+                  <td>{user.dob.age}</td>
+                  <td>{user.location.country}</td>
+                  <td>{user.gender}</td>
+                </tr>
+              </tbody>
+            </table>
           );
         })}
     </>
