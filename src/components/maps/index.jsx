@@ -10,8 +10,7 @@ import './styles.css';
 export default function Maps() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey:
-      'AIzaSyD4WjZ1-SsyMPFnt_2KhZsyYt_OcKtfyg8',
+    googleMapsApiKey: import.meta.env.VITE_API_MAPS_KEY,
   });
 
   const gpsPosition = {
