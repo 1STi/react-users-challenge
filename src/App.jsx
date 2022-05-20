@@ -1,6 +1,8 @@
 import './App.css';
 import api from './services/api';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Rotas from './routes';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -62,11 +64,16 @@ function App() {
                 return user;
               }
             })
-            .map((user, login) => {
+            .map((user) => {
+              console.log(user.login.uuid);
               return (
-                <tr className="users" key={login.uuid}>
+                <tr className="users" key={user.login.uuid}>
                   <td>
-                    <img src={user.picture.thumbnail} />
+                    <Link
+                      to={`/details/${user.login.uuid}`}
+                    >
+                      <img src={user.picture.thumbnail} />
+                    </Link>
                   </td>
                   <td>
                     {user.name.first} {user.name.last}
