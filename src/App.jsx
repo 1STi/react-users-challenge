@@ -25,9 +25,8 @@ function App() {
           setSearch(event.target.value);
         }}
       />
-
+      //habilitar busca por botão
       <button onClick={() => {}}>Search</button>
-
       <table>
         <thead>
           <tr>
