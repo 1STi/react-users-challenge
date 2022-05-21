@@ -1,4 +1,8 @@
-import { Link, useParams } from 'react-router-dom';
+import {
+  Link,
+  useLocation,
+  useSearchParams,
+} from 'react-router-dom';
 import React from 'react';
 import Maps from '../maps';
 
@@ -9,14 +13,16 @@ export default function Details() {
     lng: -43.97114223062192,
   };
 
-  //extraindo o ID do usuario enviado via URL
-  const { id } = useParams();
-  console.log('idddd do susuario', id);
+  // const search = useLocation().search;
+  // const user = new URLSearchParams(search);
+
+  const [searchParams] = useSearchParams();
+  const user = Object.fromEntries([...searchParams]);
 
   // FALTA exibir na pagina details:
   // maps do user especifico
-  // Avatar, Nome
-  // Cidade, Pais
+  // Avatar
+  //Nome, Cidade, Estado, Pais
 
   return (
     <>
@@ -24,6 +30,9 @@ export default function Details() {
         <button>Voltar</button>
       </Link>
       <Maps gpsPosition={gpsPosition} />
+      <div className="userInfos">
+        <p>{user.name}</p>
+      </div>
     </>
   );
 }

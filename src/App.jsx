@@ -40,7 +40,6 @@ function App() {
         <tbody>
           {users
             .filter((user) => {
-              console.log(user);
               if (search == '') {
                 return user;
               } else if (
@@ -64,19 +63,20 @@ function App() {
               }
             })
             .map((user) => {
-              console.log(user.login.uuid);
+              const detailsName = `${user.name.first} ${user.name.last}`;
+              const detailsPicture = user.picture.thumbnail;
+              const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
+
               return (
                 <tr className="users" key={user.login.uuid}>
                   <td>
                     <Link
-                      to={`/details/${user.login.uuid}`}
+                      to={`/details?name=${detailsName}&picture=${detailsPicture}&city=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lon=${user.location.coordinates.longitude}`}
                     >
                       <img src={user.picture.thumbnail} />
                     </Link>
                   </td>
-                  <td>
-                    {user.name.first} {user.name.last}
-                  </td>
+                  <td>{detailsName}</td>
                   <td>{user.dob.age}</td>
                   <td>{user.location.country}</td>
                   <td>{user.gender}</td>
