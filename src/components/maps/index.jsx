@@ -7,16 +7,15 @@ import {
 } from '@react-google-maps/api';
 import './styles.css';
 
-export default function Maps() {
+//https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
+
+export default function Maps({ gpsPosition }) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: import.meta.env.VITE_API_MAPS_KEY,
   });
 
-  const gpsPosition = {
-    lat: -27.590824,
-    lng: -48.551262,
-  };
+  console.log(gpsPosition);
 
   return (
     <>
@@ -34,7 +33,7 @@ export default function Maps() {
               position={gpsPosition}
               options={{
                 label: {
-                  text: 'Posicão Testeee',
+                  text: 'Posicão Testeee555',
                   className: 'map-marker',
                 },
               }}
