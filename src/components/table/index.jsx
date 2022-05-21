@@ -3,9 +3,8 @@ import api from '../../services/api.js';
 import { Link } from 'react-router-dom';
 import TableUsers from '../TableUsers/index.jsx';
 
-export default function Table() {
+export default function Table({ search }) {
   const [users, setUsers] = useState([]);
-  const [search, setSearch] = useState('');
 
   useEffect(() => {
     api.get('/').then((res) => {
@@ -43,10 +42,6 @@ export default function Table() {
 
   return (
     <>
-      {/* //obs transferi sarch ->componente search */}
-
-      {/* //habilitar busca por botão */}
-      <button onClick={() => {}}>Search</button>
       <table>
         <thead>
           <tr>
@@ -58,13 +53,45 @@ export default function Table() {
           </tr>
         </thead>
         <tbody>
-          {renderUsers().map((user) => {
-            const detailsName = `${user.name.first} ${user.name.last}`;
-            const detailsPicture = user.picture.thumbnail;
-            const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
+          {users
+            .filter((user) => {
+              if (search == '') {
+                return user;
+              } else if (
+                user.name.first
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                user.name.last
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                String(user.dob.age)
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                user.location.country
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) ||
+                user.gender
+                  .toLowerCase()
+                  .includes(search.toLowerCase())
+              ) {
+                return user;
+              }
+            })
+            .map((user) => {
+              const detailsName = `${user.name.first} ${user.name.last}`;
+              const detailsPicture = user.picture.thumbnail;
+              const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
 
-            return <TableUsers />;
-          })}
+              return (
+                <TableUsers
+                  key={user.login.uuid}
+                  detailsName={detailsName}
+                  detailsPicture={detailsPicture}
+                  detailsLocation={detailsLocation}
+                  user={user}
+                />
+              );
+            })}
         </tbody>
       </table>
     </>

@@ -5,17 +5,22 @@ export default function SearchForm({ handleSearch }) {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="Search users..."
-        onChange={(event) =>
-          setSearchValue(event.target.value)
-        }
-        value={searchValue}
-      />
-      <button onClick={() => handleSearch(searchValue)}>
-        Search
-      </button>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          handleSearch(searchValue);
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Search users..."
+          onChange={(event) =>
+            setSearchValue(event.target.value)
+          }
+          value={searchValue}
+        />
+        <button type="submit">Search</button>
+      </form>
     </>
   );
 }
