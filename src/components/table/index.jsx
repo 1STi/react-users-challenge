@@ -7,38 +7,13 @@ export default function Table({ search }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    api.get('/').then((res) => {
-      const { results } = res.data;
+    async function fetchData() {
+      const response = await api.get('/');
+      const { results } = response.data;
       setUsers(results);
-    });
+    }
+    fetchData();
   }, []);
-
-  const renderUsers = useCallback(() => {
-    const filteredUsers = users.filter((user) => {
-      if (search == '') {
-        return user;
-      } else if (
-        user.name.first
-          .toLowerCase()
-          .includes(search.toLowerCase()) ||
-        user.name.last
-          .toLowerCase()
-          .includes(search.toLowerCase()) ||
-        String(user.dob.age)
-          .toLowerCase()
-          .includes(search.toLowerCase()) ||
-        user.location.country
-          .toLowerCase()
-          .includes(search.toLowerCase()) ||
-        user.gender
-          .toLowerCase()
-          .includes(search.toLowerCase())
-      ) {
-        return user;
-      }
-    });
-    return filteredUsers;
-  }, [users]);
 
   return (
     <>
@@ -78,16 +53,9 @@ export default function Table({ search }) {
               }
             })
             .map((user) => {
-              const detailsName = `${user.name.first} ${user.name.last}`;
-              const detailsPicture = user.picture.thumbnail;
-              const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
-
               return (
                 <TableUsers
                   key={user.login.uuid}
-                  detailsName={detailsName}
-                  detailsPicture={detailsPicture}
-                  detailsLocation={detailsLocation}
                   user={user}
                 />
               );

@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
 
-export default function TableUsers({
-  detailsName,
-  detailsPicture,
-  detailsLocation,
-  user,
-}) {
+export default function TableUsers({ user }) {
+  const detailsName = `${user.name.first} ${user.name.last}`;
+  const detailsPicture = user.picture.thumbnail;
+  const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
   return (
     <>
       <tr className="users">
