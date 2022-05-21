@@ -1,6 +1,10 @@
 import { useState } from 'react';
 
-export default function SearchForm({ handleSearch }) {
+export default function SearchForm({
+  handleSearch,
+  handleList,
+  list,
+}) {
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -20,6 +24,11 @@ export default function SearchForm({ handleSearch }) {
           value={searchValue}
         />
         <button type="submit">Search</button>
+        <input
+          type="checkbox"
+          checked={list === 'avatar'}
+          onChange={handleList}
+        />
       </form>
     </>
   );

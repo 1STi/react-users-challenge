@@ -1,9 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import api from '../../services/api.js';
-import { Link } from 'react-router-dom';
 import TableUsers from '../TableUsers/index.jsx';
 
-export default function Table({ search }) {
+export default function Table({ search, listType }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -14,6 +13,10 @@ export default function Table({ search }) {
     }
     fetchData();
   }, []);
+
+  if (listType === 'avatar') {
+    return <h1>lista de avatares</h1>;
+  }
 
   return (
     <>
