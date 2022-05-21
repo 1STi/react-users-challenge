@@ -9,7 +9,7 @@ export default function TableUsers({ user }) {
       <tr className="users">
         <td>
           <Link
-            to={`/details?name=${detailsName}&picture=${detailsPicture}&city=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lon=${user.location.coordinates.longitude}`}
+            to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}
           >
             <img src={user.picture.thumbnail} />
           </Link>

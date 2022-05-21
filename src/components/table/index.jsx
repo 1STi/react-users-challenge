@@ -15,7 +15,18 @@ export default function Table({ search, listType }) {
   }, []);
 
   if (listType === 'avatar') {
-    return <h1>lista de avatares</h1>;
+    console.log('testttAvatar', users);
+    return (
+      <>
+        <h1> lista de avatares </h1>
+        <h2>teste</h2>
+        {users.map((user) => {
+          <p>
+            <img src={user.picture.thumbnail} />
+          </p>;
+        })}
+      </>
+    );
   }
 
   return (

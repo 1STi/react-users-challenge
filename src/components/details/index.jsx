@@ -7,22 +7,14 @@ import React from 'react';
 import Maps from '../maps';
 
 export default function Details() {
-  //mudar para localização do usuario especifico
-  const gpsPosition = {
-    lat: -19.86598807097657,
-    lng: -43.97114223062192,
-  };
-
-  // const search = useLocation().search;
-  // const user = new URLSearchParams(search);
-
   const [searchParams] = useSearchParams();
   const user = Object.fromEntries([...searchParams]);
 
-  // FALTA exibir na pagina details:
-  // maps do user especifico
-  // Avatar
-  //Nome, Cidade, Estado, Pais
+  const gpsPosition = {
+    lat: parseFloat(user.lat),
+    lng: parseFloat(user.lng),
+  };
+  //CORRIGIR: lat e lng -> não esta funcionando corretamente
 
   return (
     <>
@@ -31,7 +23,9 @@ export default function Details() {
       </Link>
       <Maps gpsPosition={gpsPosition} />
       <div className="userInfos">
+        <img src={user.picture} />
         <p>{user.name}</p>
+        <p>{user.location}</p>
       </div>
     </>
   );

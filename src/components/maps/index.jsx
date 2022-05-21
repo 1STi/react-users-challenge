@@ -14,7 +14,6 @@ export default function Maps({ gpsPosition }) {
     id: 'google-map-script',
     googleMapsApiKey: import.meta.env.VITE_API_MAPS_KEY,
   });
-
   return (
     <>
       <div className="map">
@@ -31,7 +30,7 @@ export default function Maps({ gpsPosition }) {
               position={gpsPosition}
               options={{
                 label: {
-                  text: 'Posicão Testeee666',
+                  text: 'Posicão Testeee777',
                   className: 'map-marker',
                 },
               }}
