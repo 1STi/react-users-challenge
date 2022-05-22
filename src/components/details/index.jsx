@@ -1,8 +1,4 @@
-import {
-  Link,
-  useLocation,
-  useSearchParams,
-} from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import React from 'react';
 import Maps from '../maps';
 import { Container } from './styles';
@@ -20,10 +16,10 @@ export default function Details() {
     <>
       <Container className="Details">
         <Link to="/">
-          <button>VoltarrrRRRRRRRrrrrr</button>
+          <button>Voltar</button>
         </Link>
         <Maps gpsPosition={gpsPosition} />
-        <div className="userInfos">
+        <div className="user-infos">
           <img src={user.picture} />
           <p>{user.name}</p>
           <p>{user.location}</p>

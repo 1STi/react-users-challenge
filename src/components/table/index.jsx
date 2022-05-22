@@ -18,30 +18,28 @@ export default function Table({ search, listType }) {
 
   if (listType === 'avatar') {
     return (
-      <>
-        <section className="avatar">
-          {users.map((user) => {
-            const detailsName = `${user.name.first} ${user.name.last}`;
-            const detailsPicture = user.picture.thumbnail;
-            const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
-            return (
-              <ul
-                className="avatar-list"
-                key={user.login.uuid}
-              >
-                <li className="avatar-items">
-                  <Link
-                    to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}
-                  >
-                    <img src={user.picture.thumbnail} />
-                  </Link>
-                  <p>{user.name.first}</p>
-                </li>
-              </ul>
-            );
-          })}
-        </section>
-      </>
+      <Container>
+        {users.map((user) => {
+          const detailsName = `${user.name.first} ${user.name.last}`;
+          const detailsPicture = user.picture.thumbnail;
+          const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
+          return (
+            <ul
+              className="avatar-list"
+              key={user.login.uuid}
+            >
+              <li className="avatar-items">
+                <Link
+                  to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}
+                >
+                  <img src={user.picture.thumbnail} />
+                </Link>
+                <p>{user.name.first}</p>
+              </li>
+            </ul>
+          );
+        })}
+      </Container>
     );
   }
 
@@ -73,7 +71,7 @@ export default function Table({ search, listType }) {
 
   return (
     <>
-      <Container className="Table">
+      <Container>
         <table>
           <thead>
             <tr className="table-header">
