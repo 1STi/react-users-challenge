@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './App.css';
-import Rotas from './routes';
+import './global.css';
+import ReactRoutes from './routes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Rotas />
+    <ReactRoutes />
   </React.StrictMode>,
 );

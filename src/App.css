@@ -1,12 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-body{
-  font-family: 'Roboto', sans-serif;
-}
-
 .app {
   margin: 50px;
   display: flex;

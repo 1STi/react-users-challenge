@@ -10,6 +10,8 @@ export default function Details() {
   const [searchParams] = useSearchParams();
   const user = Object.fromEntries([...searchParams]);
 
+  // lat: -19.866109155347445,
+  // lng: -43.9709705695494,
   const gpsPosition = {
     lat: parseFloat(user.lat),
     lng: parseFloat(user.lng),

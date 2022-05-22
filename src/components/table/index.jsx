@@ -7,7 +7,7 @@ export default function Table({ search, listType }) {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await api.get('/');
+      const response = await api.get('/?results=12&nat=br');
       const { results } = response.data;
       setUsers(results);
     }
@@ -21,7 +21,7 @@ export default function Table({ search, listType }) {
         <h1> lista de avatares </h1>
 
         {users.map((user) => {
-          <h2>{user.name}</h2>;
+          <p>{user.name}</p>;
         })}
       </>
     );

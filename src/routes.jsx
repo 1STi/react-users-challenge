@@ -7,7 +7,7 @@ import {
 import Details from './components/details';
 import App from './App';
 
-export default function Rotas() {
+export default function ReactRoutes() {
   return (
     <BrowserRouter>
       <Routes>
