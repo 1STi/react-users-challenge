@@ -1,7 +1,7 @@
-import './App.css';
 import { useState, useEffect } from 'react';
 import SearchForm from './components/SearchForm';
 import Table from './components/Table';
+import { Container } from '../src/styles/App.js';
 
 function App() {
   const [search, setSearch] = useState('');
@@ -16,15 +16,19 @@ function App() {
   }
   return (
     <>
-      <SearchForm
-        handleSearch={setSearch}
-        handleList={handleListType}
-      />
-      <Table
-        search={search}
-        listType={listType}
-        list={listType}
-      />
+      <Container>
+        <SearchForm
+          handleSearch={setSearch}
+          handleList={handleListType}
+        />
+        <main className="main">
+          <Table
+            search={search}
+            listType={listType}
+            list={listType}
+          />
+        </main>
+      </Container>
     </>
   );
 }
