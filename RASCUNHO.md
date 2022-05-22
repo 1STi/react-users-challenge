@@ -9,7 +9,6 @@ O QUE FALTA?
 [] Aplicar Styles
 
 
-
 [] Aplicar componetização o maximo possivel
 [] Aplicar clean code
 
