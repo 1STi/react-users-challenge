@@ -19,11 +19,9 @@ export default function Table({ search, listType }) {
     return (
       <>
         <h1> lista de avatares </h1>
-        <h2>teste</h2>
+
         {users.map((user) => {
-          <p>
-            <img src={user.picture.thumbnail} />
-          </p>;
+          <h2>{user.name}</h2>;
         })}
       </>
     );

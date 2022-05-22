@@ -1,6 +1,10 @@
-componente filter recebe users
+O QUE FALTA?
 
-componentes filter retorna usersFiltrados para componente Map
 
-componente Map retorn resultado da busca
+[] Arrumar localização do GPS/Mapa
+[] Arrumar .mapAVATARS
+[] Tenta aprimorar o input search(ao apagar a busca, mostrar todos users)
+[] Aplicar Styles
+[] Aplicar componetização o maximo possivel
+[] Aplicar clean code
 
