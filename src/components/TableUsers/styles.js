@@ -2,23 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
   background-color: green;
-  table {
-    width: 100%;
-    margin: 50px 0px;
-    border-spacing: 15px;
-    color: #444;
-  }
+  width: 247%;
+  margin: auto;
+  color: #444;
 
   tr {
     margin-bottom: 20px;
+    font-size: 25px;
+    color: #444;
+    font-weight: 300;
+    background-color: yellow;
   }
-
-  th {
-    width: 250px;
-    text-align: left;
-    font-size: 20px;
-  }
-
   td {
     width: 250px;
     font-size: 20px;

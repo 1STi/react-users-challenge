@@ -76,31 +76,35 @@ export default function Table({ search, listType }) {
 
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            <th>Photo</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Contry</th>
-            <th>Gender</th>
-          </tr>
-        </thead>
-        <tbody>
-          {usersFiltered.length === 0 ? (
-            <p className="user-notfound">user not found</p>
-          ) : (
-            usersFiltered.map((user) => {
-              return (
-                <TableUsers
-                  key={user.login.uuid}
-                  user={user}
-                />
-              );
-            })
-          )}
-        </tbody>
-      </table>
+      <Container className="Table">
+        <table>
+          <thead>
+            <tr className="table-header">
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Contry</th>
+              <th>Gender</th>
+            </tr>
+          </thead>
+          <tbody>
+            {usersFiltered.length === 0 ? (
+              <p className="user-notfound">
+                user not found
+              </p>
+            ) : (
+              usersFiltered.map((user) => {
+                return (
+                  <TableUsers
+                    key={user.login.uuid}
+                    user={user}
+                  />
+                );
+              })
+            )}
+          </tbody>
+        </table>
+      </Container>
     </>
   );
 }

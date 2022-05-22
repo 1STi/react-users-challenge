@@ -7,8 +7,8 @@ export default function TableUsers({ user }) {
   const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
   return (
     <>
-      <Container>
-        <tr className="users">
+      <Container className="TableUsers">
+        <tr>
           <td>
             <Link
               to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}

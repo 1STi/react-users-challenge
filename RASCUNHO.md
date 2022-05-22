@@ -7,6 +7,7 @@ O QUE FALTA?
 [X] Tenta aprimorar o input search(ao apagar a busca, mostrar todos users)
 
 [] Aplicar Styles
+[] Responsividade
 
 
 [] Aplicar componetização o maximo possivel
