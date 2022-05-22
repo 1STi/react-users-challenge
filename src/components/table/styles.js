@@ -20,4 +20,14 @@ export const Container = styled.section`
     width: 250px;
     font-size: 20px;
   }
+
+  .avatar-list {
+    list-style: none;
+    background-color: red;
+  }
+
+  .avatar-items {
+    list-style: none;
+    background-color: red;
+  }
 `;

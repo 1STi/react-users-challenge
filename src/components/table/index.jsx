@@ -17,33 +17,30 @@ export default function Table({ search, listType }) {
   }, []);
 
   if (listType === 'avatar') {
-    console.log('testttAvatar', users);
-
     return (
       <>
-        <Container>
-          <h1> lista de avatares </h1>
-          <p>testeeee</p>
-          <div>
-            {users.map((user) => {
-              const detailsName = `${user.name.first} ${user.name.last}`;
-              const detailsPicture = user.picture.thumbnail;
-              const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
-              return (
-                <div
-                  className="avatars"
-                  key={user.login.uuid}
-                >
+        <section className="avatar">
+          {users.map((user) => {
+            const detailsName = `${user.name.first} ${user.name.last}`;
+            const detailsPicture = user.picture.thumbnail;
+            const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
+            return (
+              <ul
+                className="avatar-list"
+                key={user.login.uuid}
+              >
+                <li className="avatar-items">
                   <Link
                     to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}
                   >
                     <img src={user.picture.thumbnail} />
                   </Link>
-                </div>
-              );
-            })}
-          </div>
-        </Container>
+                  <p>{user.name.first}</p>
+                </li>
+              </ul>
+            );
+          })}
+        </section>
       </>
     );
   }

@@ -5,7 +5,8 @@ import {
   useJsApiLoader,
   Marker,
 } from '@react-google-maps/api';
-import './styles.css';
+import './styles.js';
+import { Container } from './styles.js';
 
 //https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 
@@ -16,7 +17,7 @@ export default function Maps({ gpsPosition }) {
   });
   return (
     <>
-      <div className="map">
+      <Container className="map">
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={{
@@ -30,7 +31,7 @@ export default function Maps({ gpsPosition }) {
               position={gpsPosition}
               options={{
                 label: {
-                  text: 'Posicão Testeee777',
+                  text: 'Posicão Testeee666',
                   className: 'map-marker',
                 },
               }}
@@ -39,7 +40,7 @@ export default function Maps({ gpsPosition }) {
         ) : (
           <></>
         )}
-      </div>
+      </Container>
     </>
   );
 }
