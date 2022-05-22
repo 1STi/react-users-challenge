@@ -7,5 +7,5 @@ export const Container = styled.section`
   align-items: center;
   width: 900px;
   height: 100vh;
-  background-color: gray;
+  background-color: #ffffff;
 `;
