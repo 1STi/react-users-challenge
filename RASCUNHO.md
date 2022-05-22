@@ -2,9 +2,10 @@ O QUE FALTA?
 
 
 [X] Arrumar localização do GPS/Mapa
-[] Arrumar .mapAVATARS
-[] Tenta aprimorar o input search(ao apagar a busca, mostrar todos users)
-[] Criar "users not found"
+[X] Arrumar .mapAVATARS
+[X] Criar "users not found"
+[X] Tenta aprimorar o input search(ao apagar a busca, mostrar todos users)
+
 [] Aplicar Styles
 
 

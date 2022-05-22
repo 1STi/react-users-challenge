@@ -18,6 +18,7 @@ function App() {
     <>
       <SearchForm
         handleSearch={setSearch}
+        search={search}
         handleList={handleListType}
       />
       <Table

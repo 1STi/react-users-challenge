@@ -45,6 +45,32 @@ export default function Table({ search, listType }) {
     );
   }
 
+  const usersFiltered = users.filter(usersFilter);
+
+  function usersFilter(user) {
+    if (search == '') {
+      return user;
+    } else if (
+      user.name.first
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      user.name.last
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      String(user.dob.age)
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      user.location.country
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      user.gender
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    ) {
+      return user;
+    }
+  }
+
   return (
     <>
       <table>
@@ -58,38 +84,18 @@ export default function Table({ search, listType }) {
           </tr>
         </thead>
         <tbody>
-          {users
-            .filter((user) => {
-              if (search == '') {
-                return user;
-              } else if (
-                user.name.first
-                  .toLowerCase()
-                  .includes(search.toLowerCase()) ||
-                user.name.last
-                  .toLowerCase()
-                  .includes(search.toLowerCase()) ||
-                String(user.dob.age)
-                  .toLowerCase()
-                  .includes(search.toLowerCase()) ||
-                user.location.country
-                  .toLowerCase()
-                  .includes(search.toLowerCase()) ||
-                user.gender
-                  .toLowerCase()
-                  .includes(search.toLowerCase())
-              ) {
-                return user;
-              }
-            })
-            .map((user) => {
+          {usersFiltered.length === 0 ? (
+            <p className="user-notfound">user not found</p>
+          ) : (
+            usersFiltered.map((user) => {
               return (
                 <TableUsers
                   key={user.login.uuid}
                   user={user}
                 />
               );
-            })}
+            })
+          )}
         </tbody>
       </table>
     </>

@@ -4,6 +4,7 @@ export default function SearchForm({
   handleSearch,
   handleList,
   list,
+  search,
 }) {
   const [searchValue, setSearchValue] = useState('');
 
@@ -19,9 +20,9 @@ export default function SearchForm({
           type="text"
           placeholder="Search users..."
           onChange={(event) =>
-            setSearchValue(event.target.value)
+            handleSearch(event.target.value)
           }
-          value={searchValue}
+          value={search}
         />
         <button type="submit">Search</button>
         <input
