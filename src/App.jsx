@@ -21,7 +21,7 @@ function App() {
         handleSearch={setSearch}
         handleList={handleListType}
       />
-      <main className="main">
+      <main>
         <Table
           search={search}
           listType={listType}
