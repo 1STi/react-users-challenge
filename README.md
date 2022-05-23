@@ -75,7 +75,7 @@ Você pode visualizar o layout usado como referencia para o projeto através do 
 Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-$ git clone https://github.com/guilhermemm-dev/react-users-challenge
+$ git clone https://github.com/guilhermemm-dev/react-users-challenge/tree/guilherme-martins
 $ cd react-users-challenge
 ```
 
