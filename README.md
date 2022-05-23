@@ -27,14 +27,25 @@ Obs: a Api Random User não gera coordenadas de gps fieis a localização do usu
 
 ## 🧪 Tecnologias
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+Esse projeto foi desenvolvido principalmente com as seguintes tecnologias:
 
 - React
 - JavaScript
 - Styled-components
-- Axios
-- React-router
-- React-icons
+
+
+
+## 📕 Bibliotecas
+
+Esse projeto foi utilizou das seguintes libs:
+
+- vitejs
+- styled-components
+- react-google-maps/api
+- react-dom
+- react-icons
+- react-router
+- axios
 
 ## 💻 Demonstração
 
