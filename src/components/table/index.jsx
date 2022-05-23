@@ -84,9 +84,9 @@ export default function Table({ search, listType }) {
           </thead>
           <tbody>
             {usersFiltered.length === 0 ? (
-              <p className="user-notfound">
-                user not found
-              </p>
+              <div className="user-notfound">
+                No User Found!
+              </div>
             ) : (
               usersFiltered.map((user) => {
                 return (

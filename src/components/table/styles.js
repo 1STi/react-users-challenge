@@ -47,4 +47,12 @@ export const ContainerTable = styled.div`
     width: 50px;
     border-radius: 100%;
   }
+  .user-notfound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-left: 20vw;
+    margin-top: 15vh;
+  }
 `;
