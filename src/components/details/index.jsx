@@ -13,18 +13,19 @@ export default function Details() {
   };
 
   return (
-    <>
-      <Container>
-        <Link to="/">
-          <button>Voltar</button>
-        </Link>
-        <Maps gpsPosition={gpsPosition} />
-        <div className="user-infos">
-          <img src={user.picture} />
-          <p>{user.name}</p>
-          <p>{user.location}</p>
-        </div>
-      </Container>
-    </>
+    <Container>
+      <Link to="/">
+        <button>Voltar</button>
+      </Link>
+      <Maps gpsPosition={gpsPosition} />
+      <div className="user-infos">
+        <img src={user.picture} />
+        <p>
+          {user.name}
+          <br />
+          {user.location}
+        </p>
+      </div>
+    </Container>
   );
 }

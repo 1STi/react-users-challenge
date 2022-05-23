@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 60vh;
+  height: 50vh;
+  width: 80vw;
+  margin: auto;
 
   .map-marker {
     font-size: 16px;

@@ -9,6 +9,8 @@ export const ContainerAvatar = styled.div`
     flex-wrap: wrap;
     max-width: 60rem;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 
     li {
       width: 12.5rem;
@@ -39,6 +41,7 @@ export const ContainerTable = styled.div`
   thead {
     font-size: 18px;
     padding: 1rem 2rem;
+    height: 60px;
   }
   img {
     width: 50px;

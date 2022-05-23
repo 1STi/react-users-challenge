@@ -6,7 +6,7 @@ export const SearchBox = styled.div`
   background-color: rgba(55, 55, 55, 0.2);
   width: 300px;
   padding: 15px;
-  margin: auto;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@ export const SearchBox = styled.div`
 
 export const CheckBox = styled.div`
   background-color: transparent;
-  margin: auto;
+  margin: 20px auto;
   display: flex;
   flex-direction: row;
   align-items: center;
