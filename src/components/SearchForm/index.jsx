@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import { Container } from './styles.js';
+import { Container, SearchBox } from './styles.js';
 
 export default function SearchForm({
   handleSearch,
@@ -9,8 +9,8 @@ export default function SearchForm({
 }) {
   const [searchValue, setSearchValue] = useState('');
   return (
-    <>
-      <Container>
+    <Container>
+      <SearchBox>
         <form
           onSubmit={(event) => {
             event.preventDefault();
@@ -30,13 +30,12 @@ export default function SearchForm({
             <FiSearch size={25} color="#FFF" />
           </button>
         </form>
-
-        <input
-          type="checkbox"
-          checked={list === 'avatar'}
-          onChange={handleList}
-        />
-      </Container>
-    </>
+      </SearchBox>
+      <input
+        type="checkbox"
+        checked={list === 'avatar'}
+        onChange={handleList}
+      />
+    </Container>
   );
 }
