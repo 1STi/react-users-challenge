@@ -15,7 +15,7 @@
 
  1. Os dados usados nessa aplicação foram obtidos atraves da API [Random User](https://randomuser.me/). 
 
- 2. A requisição feita via axios, foram utilizados os parametros de quantidade de usuários(12) a serem gerados e a nacionalidade dos usuários na qual optei por brasileiros apenas.
+ 2. A requisição feita via protocolo HTTP utilizando o axios, foram utilizados os parametros de quantidade de usuários(12) a serem gerados e a nacionalidade dos usuários na qual optei por brasileiros apenas.
 
  3. Os filtros presentes na barra de pesquisa são: Nome, Sobrenome, Nacionalidade, Idade e Gênero.
 
