@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.section``;
-
-// background-color: rgba(235, 235, 235);
-// padding: 15px;
-// margin: 34px 0;
-// display: flex;
-// border: rgba(0, 0, 0, 0);
-// border-radius: 8px;
-// border-width: 1px;
-// box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 // input {
 //   background-color: transparent;

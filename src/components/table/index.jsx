@@ -2,7 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import api from '../../services/api.js';
 import TableUsers from '../TableUsers/index.jsx';
 import { Link } from 'react-router-dom';
-import { Container } from './styles.js';
+import {
+  ContainerAvatar,
+  ContainerTable,
+} from './styles.js';
 
 export default function Table({ search, listType }) {
   const [users, setUsers] = useState([]);
@@ -18,28 +21,25 @@ export default function Table({ search, listType }) {
 
   if (listType === 'avatar') {
     return (
-      <Container>
-        {users.map((user) => {
-          const detailsName = `${user.name.first} ${user.name.last}`;
-          const detailsPicture = user.picture.thumbnail;
-          const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
-          return (
-            <ul
-              className="avatar-list"
-              key={user.login.uuid}
-            >
-              <li className="avatar-items">
+      <ContainerAvatar>
+        <ul>
+          {users.map((user) => {
+            const detailsName = `${user.name.first} ${user.name.last}`;
+            const detailsPicture = user.picture.large;
+            const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
+            return (
+              <li key={user.login.uuid}>
                 <Link
                   to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}
                 >
-                  <img src={user.picture.thumbnail} />
+                  <img src={user.picture.large} />
                 </Link>
                 <p>{user.name.first}</p>
               </li>
-            </ul>
-          );
-        })}
-      </Container>
+            );
+          })}
+        </ul>
+      </ContainerAvatar>
     );
   }
 
@@ -71,10 +71,10 @@ export default function Table({ search, listType }) {
 
   return (
     <>
-      <Container>
+      <ContainerTable>
         <table>
           <thead>
-            <tr className="table-header">
+            <tr>
               <th>Photo</th>
               <th>Name</th>
               <th>Age</th>
@@ -99,7 +99,7 @@ export default function Table({ search, listType }) {
             )}
           </tbody>
         </table>
-      </Container>
+      </ContainerTable>
     </>
   );
 }

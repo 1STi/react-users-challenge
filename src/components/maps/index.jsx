@@ -5,7 +5,6 @@ import {
   useJsApiLoader,
   Marker,
 } from '@react-google-maps/api';
-import './styles.js';
 import { Container } from './styles.js';
 
 //https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
@@ -15,9 +14,11 @@ export default function Maps({ gpsPosition }) {
     id: 'google-map-script',
     googleMapsApiKey: import.meta.env.VITE_API_MAPS_KEY,
   });
+
+  console.log(gpsPosition);
   return (
     <>
-      <Container className="map">
+      <Container>
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={{

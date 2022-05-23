@@ -30,12 +30,13 @@ export default function SearchForm({
             <FiSearch size={25} color="#FFF" />
           </button>
         </form>
+
+        <input
+          type="checkbox"
+          checked={list === 'avatar'}
+          onChange={handleList}
+        />
       </Container>
-      <input
-        type="checkbox"
-        checked={list === 'avatar'}
-        onChange={handleList}
-      />
     </>
   );
 }

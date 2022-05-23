@@ -14,7 +14,7 @@ export default function Details() {
 
   return (
     <>
-      <Container className="Details">
+      <Container>
         <Link to="/">
           <button>Voltar</button>
         </Link>

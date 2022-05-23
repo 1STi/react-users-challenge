@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import SearchForm from './components/SearchForm';
 import Table from './components/Table';
-import { Container } from '../src/styles/App.js';
+import { GlobalStyle } from './globalStyle';
 
 function App() {
   const [search, setSearch] = useState('');
@@ -16,19 +16,18 @@ function App() {
   }
   return (
     <>
-      <Container>
-        <SearchForm
-          handleSearch={setSearch}
-          handleList={handleListType}
+      <GlobalStyle />
+      <SearchForm
+        handleSearch={setSearch}
+        handleList={handleListType}
+      />
+      <main className="main">
+        <Table
+          search={search}
+          listType={listType}
+          list={listType}
         />
-        <main className="main">
-          <Table
-            search={search}
-            listType={listType}
-            list={listType}
-          />
-        </main>
-      </Container>
+      </main>
     </>
   );
 }
