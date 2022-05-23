@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import { Container, SearchBox } from './styles.js';
+import {
+  Container,
+  SearchBox,
+  CheckBox,
+} from './styles.js';
 
 export default function SearchForm({
   handleSearch,
@@ -31,11 +35,14 @@ export default function SearchForm({
           </button>
         </form>
       </SearchBox>
-      <input
-        type="checkbox"
-        checked={list === 'avatar'}
-        onChange={handleList}
-      />
+      <CheckBox>
+        <p>Checkbox --></p>
+        <input
+          type="checkbox"
+          checked={list === 'avatar'}
+          onChange={handleList}
+        />
+      </CheckBox>
     </Container>
   );
 }

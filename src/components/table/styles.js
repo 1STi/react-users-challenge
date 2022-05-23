@@ -32,7 +32,8 @@ export const ContainerAvatar = styled.div`
 
 export const ContainerTable = styled.div`
   table {
-    width: 100%;
+    width: 70vw;
+    margin: auto;
     text-align: center;
   }
   thead {
@@ -41,5 +42,6 @@ export const ContainerTable = styled.div`
   }
   img {
     width: 50px;
+    border-radius: 100%;
   }
 `;

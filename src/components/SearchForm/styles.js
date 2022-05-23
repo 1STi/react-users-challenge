@@ -39,3 +39,12 @@ export const SearchBox = styled.div`
     }
   }
 `;
+
+export const CheckBox = styled.div`
+  background-color: red;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
