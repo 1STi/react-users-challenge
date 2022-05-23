@@ -39,7 +39,7 @@ export default function SearchForm({
         <p>Click in this box to change the view mode</p>
         <input
           type="checkbox"
-          checked={list === 'avatar'}
+          checked={list === 'list'}
           onChange={handleList}
         />
       </CheckBox>

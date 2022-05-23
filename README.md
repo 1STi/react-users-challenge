@@ -1,32 +1,100 @@
-## Desafio React
-
-O objetico desse desafio é verificar os seus conhecimentos de react, você criará uma aplicação react que busca e lista pessoas em uma API e permite que o usuários refinem sua busca através de filtros
-
-### Design da interface:
-https://framer.com/projects/9A3d2HBXovIdAzJIoI8e-8DCAG
-
-### Requisitos UX
-
-[] Listar ao menos 12 pessoas na tela
-
-[] Habilitar a visualização em lista
-
-[] Aplicar os filtros de nome, genero, idade, nacionalidade
-
-[] Redirecionar o usuário para a página de detalhes ao clicar no avatar de uma pessoa
-
-[] Exibir um mapa com as coordenadas do usuário selecionado
-
-[] Exibir a cidade é o país do usuário selecionado
 
 
-### Requisitos Técnicos
+<h1 align="center">
+    Desafio React - 1STi
+</h1>
 
-[] Usar styled-components para estilizar a aplicação
 
-[] Usar o react-router para redirecionar o usuári
 
-[] Renderizar a localização usando o Google Maps
+## 💻 Projeto
 
-[] Ao menos 3 testes de integração utilizando o Cypress
 
+### Resumo: Aplicação React que busca e lista alatoria pessoas em uma API externa e permite que o usuários refinem sua busca através de filtros.
+
+ - **Mais detalhes:**
+
+Os dados usados nessa aplicação foram obtidos atraves da API [Random User](https://randomuser.me/). 
+
+A requisição feita via axios, foram utilizados os parametros de quantidade de usuários(12) a serem gerados e a nacionalidade dos usuários na qual optei por brasileiros apenas.
+
+Foi utilizado o react-router para estabelecer as rotas da aplicação.
+
+Styled-components na estilização do projeto.
+
+API do Google Maps para renderização da localização do Usuário.
+
+Obs: a Api Random User não gera coordenadas de gps fieis a localização do usuário, gerando numeros aleátórios de latitude e longitutde, sendo assim infelizmente não há correlação direta entre o endereço do usuários e a localização mostrada no mapa.
+
+## 🧪 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- React
+- JavaScript
+- Styled-components
+- Axios
+- React-router
+- React-icons
+
+## 💻 Demonstração
+
+<p align="center">
+    <img alt="Table Page" src="/public/table.png" />
+</p>
+<p align="center">
+    <img alt="Avatars Page" src="/public/avatars.png" />
+</p>
+<p align="center">
+    <img alt="Details Page" src="/public/details.png" />
+</p>
+
+
+## 🔖 Layout
+
+Você pode visualizar o layout usado como referencia para o projeto através do link abaixo:
+
+- [Layout Web](https://framer.com/projects/9A3d2HBXovIdAzJIoI8e-8DCAG) 
+
+
+## 🚀 Como executar
+
+Clone o projeto e acesse a pasta do mesmo.
+
+```bash
+$ git clone https://github.com/guilhermemm-dev/react-users-challenge
+$ cd react-users-challenge
+```
+
+Para iniciá-lo, siga os passos abaixo:
+```bash
+# Instalar as dependências
+$ yarn
+
+# Iniciar o projeto
+$ yarn start
+```
+O app estará disponível no seu browser pelo endereço http://localhost:3000.
+
+
+
+## 📝 License
+
+Esse projeto está sob a licença MIT.  
+
+  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">   
+</p>
+
+
+<hr/>
+
+  
+
+<h3> Feito por Guilherme Martins - @guilhermemm-dev </h3>
+
+  
+
+- LinkedIn: https://www.linkedin.com/in/guilhermemm-dev/
+
+- GitHub: https://github.com/guilhermemm-dev
+
+- Portfolio: https://guilhermemm-dev.github.io/portifolio/
