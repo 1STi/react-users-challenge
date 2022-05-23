@@ -26,7 +26,7 @@ export default function Maps({ gpsPosition }) {
               height: '100%',
             }}
             center={gpsPosition}
-            zoom={15}
+            zoom={2}
           >
             <Marker
               position={gpsPosition}
