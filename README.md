@@ -9,21 +9,24 @@
 ## 💻 Projeto
 
 
-### Resumo: Aplicação React que busca e lista alatoria pessoas em uma API externa e permite que o usuários refinem sua busca através de filtros.
+### Resumo: Aplicação React que busca e lista aleatoria de pessoas em uma API externa e permite que o usuários refinem sua busca através de filtros.
 
  - **Mais detalhes:**
 
-Os dados usados nessa aplicação foram obtidos atraves da API [Random User](https://randomuser.me/). 
+ 1. Os dados usados nessa aplicação foram obtidos atraves da API [Random User](https://randomuser.me/). 
 
-A requisição feita via axios, foram utilizados os parametros de quantidade de usuários(12) a serem gerados e a nacionalidade dos usuários na qual optei por brasileiros apenas.
+ 2. A requisição feita via axios, foram utilizados os parametros de quantidade de usuários(12) a serem gerados e a nacionalidade dos usuários na qual optei por brasileiros apenas.
 
-Foi utilizado o react-router para estabelecer as rotas da aplicação.
+ 3. Os filtros presentes na barra de pesquisa são: Nome, Sobrenome, Nacionalidade, Idade e Gênero.
 
-Styled-components na estilização do projeto.
+ 4. Foi utilizado o react-router para estabelecer as rotas da aplicação.
 
-API do Google Maps para renderização da localização do Usuário.
+ 5. Styled-components na estilização do projeto.
 
-Obs: a Api Random User não gera coordenadas de gps fieis a localização do usuário, gerando numeros aleátórios de latitude e longitutde, sendo assim infelizmente não há correlação direta entre o endereço do usuários e a localização mostrada no mapa.
+ 6. API do Google Maps para renderização da localização do Usuário.
+
+ 7. Obs: a Api Random User não gera coordenadas de gps fieis a localização do usuário, gerando numeros aleátórios de latitude e longitutde, sendo assim infelizmente não há correlação direta entre o endereço do usuários e a localização mostrada no mapa.
+
 
 ## 🧪 Tecnologias
 
