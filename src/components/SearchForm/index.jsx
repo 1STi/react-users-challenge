@@ -36,7 +36,7 @@ export default function SearchForm({
         </form>
       </SearchBox>
       <CheckBox>
-        <p>Checkbox --></p>
+        <p>Click to change visualization mode </p>
         <input
           type="checkbox"
           checked={list === 'avatar'}
