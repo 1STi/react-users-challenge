@@ -19,30 +19,6 @@ export default function Table({ search, listType }) {
     fetchData();
   }, []);
 
-  if (listType === 'avatar') {
-    return (
-      <ContainerAvatar>
-        <ul>
-          {users.map((user) => {
-            const detailsName = `${user.name.first} ${user.name.last}`;
-            const detailsPicture = user.picture.large;
-            const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
-            return (
-              <li key={user.login.uuid}>
-                <Link
-                  to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}
-                >
-                  <img src={user.picture.large} />
-                </Link>
-                <p>{user.name.first}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </ContainerAvatar>
-    );
-  }
-
   const usersFiltered = users.filter(usersFilter);
 
   function usersFilter(user) {
@@ -67,6 +43,36 @@ export default function Table({ search, listType }) {
     ) {
       return user;
     }
+  }
+
+  if (listType === 'avatar') {
+    return (
+      <ContainerAvatar>
+        <ul>
+          {usersFiltered.length === 0 ? (
+            <div className="user-notfound">
+              No User Found!
+            </div>
+          ) : (
+            usersFiltered.map((user) => {
+              const detailsName = `${user.name.first} ${user.name.last}`;
+              const detailsPicture = user.picture.large;
+              const detailsLocation = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
+              return (
+                <li key={user.login.uuid}>
+                  <Link
+                    to={`/details?name=${detailsName}&picture=${detailsPicture}&location=${detailsLocation}&lat=${user.location.coordinates.latitude}&lng=${user.location.coordinates.longitude}`}
+                  >
+                    <img src={user.picture.large} />
+                  </Link>
+                  <p>{user.name.first}</p>
+                </li>
+              );
+            })
+          )}
+        </ul>
+      </ContainerAvatar>
+    );
   }
 
   return (
