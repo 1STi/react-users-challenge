@@ -29,5 +29,4 @@ A aplicação irá requisitar os dados na api [random user](https://randomuser.m
 ## Como Enviar?
 
 * Clone esse repositório
-* Crie uma branch com o seu nome
-* Após finalizado o desafio abra um PR (pull request) no reposiório
+* Após finalizado o desafio envie o link do clone no email: [ygorfonseca@1sti.com.br](ygorfonseca@1sti.com.br) com o assunto [Desafio React - Nome Candidato]
